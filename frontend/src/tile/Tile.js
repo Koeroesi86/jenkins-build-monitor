@@ -2,13 +2,11 @@ import React from "react";
 import "./Tile.less";
 
 const Tile = ({ name, url, color }) => {
-    return (
-        <div className={"build-tile " + color}>
-            <a className="job-title" target="_blank" href={url}>
-                {name}
-            </a>
-        </div>
-    );
+  return (
+    <a className={"build-tile " + color} target="_blank" href={url}>
+      {name}
+    </a>
+  );
 };
 
 export default Tile;

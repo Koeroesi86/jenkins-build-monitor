@@ -4,15 +4,16 @@
   width: 24%;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  color: #333;
   padding: 20px;
   text-align: center;
   background: #fff;
-  font-size: 14px;
   line-height: 16px;
   margin: 6px;
   border-radius: 3px;
   overflow: hidden;
+  color: #2992b6;
+  text-decoration: none;
+  font-size: 18px;
 
   &::after {
     position: absolute;
@@ -37,7 +38,7 @@
   &.blue_anime,
   &.red_anime {
     animation-name: flash-background;
-    animation-duration: 5000ms;
+    animation-duration: 4s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
   }
@@ -53,23 +54,16 @@
     padding: 12px;
     font-weight: bold;
   }
-
-  .job-title {
-    color: #2992b6;
-    text-decoration: none;
-    display: block;
-    font-size: 18px;
-  }
 }
 
 @keyframes flash-background {
   0% {
-    background: #f2dede;
+    background: #ffcccc;
   }
   50% {
-    background: #fff4c2;
+    background: #ccffcc;
   }
   100% {
-    background: #f2dede;
+    background: #ffcccc;
   }
 }

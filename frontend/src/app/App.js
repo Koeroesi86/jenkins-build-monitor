@@ -12,16 +12,16 @@ class App extends Component {
   render() {
     const { jobs, name, url } = this.state;
     return (
-      <div className="app-wrapper">
+      <div className={"app-wrapper " + (jobs.length ? "has-jobs" : "no-jobs")}>
         <header>
           <a href={url} target="_blank">
-            {name || 'Loading...'}
+            {name || "Loading..."}
           </a>
         </header>
-          <section>
-              {(jobs.length === 0 && name) && <Success />}
-              {jobs.map((job, index) => <Tile key={index} {...job} />)}
-          </section>
+        <section>
+          {jobs.length === 0 && name && <Success />}
+          {jobs.map((job, index) => <Tile key={index} {...job} />)}
+        </section>
       </div>
     );
   }
