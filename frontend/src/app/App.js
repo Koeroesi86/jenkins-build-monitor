@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.less";
 import Tile from "../tile/Tile";
 import Success from "../success/Success";
+import Snow from "../snow/Snow";
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +14,9 @@ class App extends Component {
     const { jobs, name, url } = this.state;
     return (
       <div className={"app-wrapper " + (jobs.length ? "has-jobs" : "no-jobs")}>
+          {this.props.snow && (
+              <Snow />
+          )}
         <header>
           <a href={url} target="_blank">
             {name || "Loading..."}

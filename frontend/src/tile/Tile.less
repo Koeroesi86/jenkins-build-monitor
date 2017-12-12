@@ -3,10 +3,10 @@
   display: inline-block;
   width: 24%;
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  //border: 1px solid rgb(204, 204, 204, 0.8);
   padding: 20px;
   text-align: center;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
   line-height: 16px;
   margin: 6px;
   border-radius: 3px;
@@ -25,14 +25,22 @@
     transition: background-color 0.2s ease-in;
   }
 
+  &.blue {
+    background: rgba(0,102,0, 0.4);
+  }
+
+  &.red {
+    background: rgba(191,97,106, 0.4);
+  }
+
   &.blue_anime::after,
   &.blue::after {
-    background: #006600;
+    background: rgba(0,102,0, 0.8);
   }
 
   &.red::after,
   &.red_anime::after {
-    background: #bf616a;
+    background: rgba(191,97,106, 0.8);
   }
 
   &.blue_anime,
@@ -63,12 +71,12 @@
 
 @keyframes flash-background {
   0% {
-    background: #ffcccc;
+    background: rgba(191,97,106, 0.4);
   }
   50% {
-    background: #ccffcc;
+    background: rgba(0,102,0, 0.4);
   }
   100% {
-    background: #ffcccc;
+    background: rgba(191,97,106, 0.4);
   }
 }

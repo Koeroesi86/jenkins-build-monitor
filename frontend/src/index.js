@@ -6,12 +6,13 @@ import registerServiceWorker from "./registerServiceWorker";
 import { createRequest } from "./xhr";
 
 const ENABLE_GREEN = true;
+const ENABLE_SNOW = true;
 const VIEW = "/view/Solutions/view/Corporate/view/Corporate%20Master";
 const jenkinsDomain = "jenkins.caplin.com";
 const jenkinsUrl = `http://${jenkinsDomain}`;
 const jenkinsSocket = `ws://${jenkinsDomain}:8081`;
 
-const app = ReactDOM.render(<App />, document.getElementById("root"));
+const app = ReactDOM.render(<App snow={ENABLE_SNOW} />, document.getElementById("root"));
 
 const refreshData = () => {
   const { hash } = window.location;
