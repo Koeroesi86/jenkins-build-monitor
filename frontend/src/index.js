@@ -6,11 +6,15 @@ import registerServiceWorker from "./registerServiceWorker";
 import { createRequest } from "./xhr";
 
 const ENABLE_GREEN = false;
+const VIEW = "/view/Solutions/view/Corporate/view/Corporate%20Master";
+const jenkinsDomain = "jenkins.caplin.com";
+const jenkinsUrl = `http://${jenkinsDomain}`;
+const jenkinsSocket = `ws://${jenkinsDomain}:8081`;
 
 const app = ReactDOM.render(<App />, document.getElementById("root"));
 
 const refreshData = () => {
-  const request = createRequest("GET", `http://${window.location.hostname}:3030/status.json`, response => {
+  const request = createRequest("GET", `http://${window.location.hostname}:3030/status.json?view=${VIEW}&jenkinsUrl=${jenkinsUrl}`, response => {
     try {
         response = JSON.parse(response);
         if (response.jobs) {
@@ -34,10 +38,10 @@ setInterval(() => {
   refreshData();
 }, 10 * 1000);
 
-const ws = new WebSocket('ws://jenkins.caplin.com:8081');
+// TODO: this still gives 404, although plugin IS installed...
+const ws = new WebSocket(jenkinsSocket);
 ws.onmessage = function(msg) {
-    console.log("msg", msg);
-    alert('Message received! Yayyy! :)');
+    console.log("Message received! Yayyy! :)", msg);
 };
 
 registerServiceWorker();

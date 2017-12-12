@@ -24,11 +24,10 @@ app.use(function(req, res, next) {
 
 dotenv.config();
 
-// /view/Build%20Monitors/view/CT5%20Solution
-const jenkinsUrl = process.env.JENKINS_URL;
-const view = process.env.JENKINS_VIEW;
-
 app.get('/status.json', (req, res) => {
+    const query = req.query;
+    const jenkinsUrl = query.jenkinsUrl || process.env.JENKINS_URL;
+    const view = query.view || process.env.JENKINS_VIEW;
 
     request(`${jenkinsUrl}${view}/api/json?pretty=true`, (error, response, body) => {
         if(error) {
