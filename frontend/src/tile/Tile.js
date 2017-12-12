@@ -6,11 +6,11 @@ const Tile = ({ name, url, color }) => {
     <a className={"build-tile " + color} target="_blank" href={url}>
       {color === "blue" ? (
         <span className="job-icon" role="img" aria-label="Happy">
-          &#x1F60A;
+          &#x1F334;
         </span>
       ) : (
         <span className="job-icon" role="img" aria-label="Angry">
-          &#x1F621;
+          &#x1F4A5;
         </span>
       )}
       {name}
