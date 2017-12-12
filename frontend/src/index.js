@@ -5,7 +5,7 @@ import App from "./app/App";
 import registerServiceWorker from "./registerServiceWorker";
 import { createRequest } from "./xhr";
 
-const ENABLE_GREEN = false;
+const ENABLE_GREEN = true;
 const VIEW = "/view/Solutions/view/Corporate/view/Corporate%20Master";
 const jenkinsDomain = "jenkins.caplin.com";
 const jenkinsUrl = `http://${jenkinsDomain}`;
@@ -50,8 +50,8 @@ setInterval(() => {
 const ws = new WebSocket(jenkinsSocket);
 ws.onmessage = function(msg) {
   console.log("Message received! Yayyy! :)", msg);
-    const obj = JSON.parse(msg.data);
-    const { project, result } = obj;
+    // const obj = JSON.parse(msg.data);
+    // const { project, result } = obj;
 };
 
 registerServiceWorker();
