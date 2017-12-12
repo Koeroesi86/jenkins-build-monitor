@@ -9,7 +9,7 @@
     }
     .st1 {
       fill: #ffffff;
-      animation: cloud-animation 0.5s ease infinite;
+      animation: cloud-animation 16s ease infinite;
     }
     .st2 {
       fill: #89d0cc;
@@ -76,12 +76,12 @@
 
 @keyframes cloud-animation {
   0% {
-    margin-left: 0;
+    transform: translate(20%, 100%);
   }
   50% {
-    margin-left: 20px;
+    transform: translate(100%, 100%);
   }
   100% {
-    margin-left: 0;
+    transform: translate(20%, 100%);
   }
 }
