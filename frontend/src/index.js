@@ -19,9 +19,9 @@ const refreshData = () => {
   let url = `http://${window.location.hostname}:3030/status.json?jenkinsUrl=${jenkinsUrl}`;
 
   if (hash.length > 2) {
-    url += `&view=${hash.substring(1)}`;
+    url += `&view=${hash.substring(1)}/api/json?pretty=true`;
   } else {
-    url += `&view=${VIEW}`;
+    url += `&view=${VIEW}/api/json?pretty=true`;
   }
   const request = createRequest("GET", url, response => {
     try {

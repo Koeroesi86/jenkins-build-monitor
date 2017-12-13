@@ -29,7 +29,7 @@ app.get('/status.json', (req, res) => {
     const jenkinsUrl = query.jenkinsUrl || process.env.JENKINS_URL;
     const view = query.view || process.env.JENKINS_VIEW;
 
-    request(`${jenkinsUrl}${view}/api/json?pretty=true`, (error, response, body) => {
+    request(`${jenkinsUrl}${view}`, (error, response, body) => {
         if(error) {
             // Print the error if one occurred
             console.log('error:', error);
