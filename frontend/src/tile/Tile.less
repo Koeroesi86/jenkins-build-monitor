@@ -1,14 +1,16 @@
 .build-tile {
+  display: flex;
+  flex-basis: 24%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  align-items: center;
   position: relative;
-  display: inline-block;
-  width: 24%;
+  height: auto;
   box-sizing: border-box;
-  //border: 1px solid rgb(204, 204, 204, 0.8);
-  padding: 20px;
+  padding: 0 20px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.8);
-  line-height: 16px;
-  margin: 6px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 0.1% 0.1%;
   border-radius: 3px;
   overflow: hidden;
   color: #2992b6;
@@ -63,9 +65,30 @@
     font-weight: bold;
   }
 
-  .job-icon {
+  .job-texts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .job-name, .job-icon {
     display: inline-block;
-    float: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .job-icon {
+    flex-shrink: 1;
+  }
+
+  .job-name {
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-align: center;
   }
 }
 
